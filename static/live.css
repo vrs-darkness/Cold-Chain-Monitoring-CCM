@@ -1,0 +1,91 @@
+.dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow: hidden;
+    max-width: 400px;
+    width: 90%;
+}
+
+.dialog-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#alert-message {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-alert-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-alert-btn:hover {
+    background-color: #0056b3;
+}
+
+
+#temperature-dialog {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+#temperature-dialog .dialog-content {
+    padding: 20px;
+    text-align: center;
+}
+
+#temperature-dialog #current-temperature {
+    font-weight: bold;
+}
+
+#temperature-dialog input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
+}
+#ac-dialog {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+}
+
+#ac-dialog .dialog-content {
+    padding: 20px;
+    text-align: center;
+}
+
+#ac-dialog button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#ac-dialog button:hover {
+    background-color: #0056b3;
+}

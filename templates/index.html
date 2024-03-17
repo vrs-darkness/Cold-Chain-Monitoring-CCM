@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/user-styles.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/dashboard" class="dashboard-link">Dashboard</a>
+            <a href="/live" class="live-link">Live</a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="logout-link">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome, User!</h1>
+        <p>Get Live Data!! </p>
+        <!-- Fancy button -->
+        <button class="fancy-button" id="live-data-button">Click Here for Live Data</button>
+        <div>
+            <canvas id="graph-placeholder"></canvas>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="/static/user-scripts.js"></script>
+</body>
+</html>

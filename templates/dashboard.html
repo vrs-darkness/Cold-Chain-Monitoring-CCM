@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/dashboard-styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/dashboard" class="dashboard-link">Dashboard</a>
+            <a href="/live" class="live-link">Live</a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="logout-link">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="truck-list">
+            <h2>Trucks in Motion</h2>
+            <ul>
+                <li class="truck" data-id="truck1">
+                    Truck 1
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">ABC123</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">John Doe</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City XYZ</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City ABC</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck2">
+                    Truck 2
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">DEF456</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Jane Smith</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City LMN</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City DEF</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck3">
+                    Truck 3
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">DE2525</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Rahul</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City ISN</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City PSF</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck4">
+                    Truck 4
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">AE2525</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Rshul</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City ISP</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City IOS</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="details">
+            <div class="detail-row">
+                <span class="label">Current Latitude:</span>
+                <span class="value" id="current-lat">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Current Longitude:</span>
+                <span class="value" id="current-lng">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Start Location:</span>
+                <span class="value" id="start-location">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">End Location:</span>
+                <span class="value" id="end-location">-</span>
+            </div>
+            <!-- <button id="live-location-btn">Live Location</button>
+            <div id="map-dialog" class="dialog">
+                <div id="map"></div>
+                <button id="close-dialog">Close</button>
+            </div> -->
+            <div class="temperature-graph">
+                <canvas id="graph-placeholder"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script> 
+    <script src="/static/dashboard-script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/dashboard-styles.css"> 
+    <link rel="stylesheet" href="/static/live.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/dashboard" class="dashboard-link">Dashboard</a>
+            <a href="/live" class="live-link">Live</a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="logout-link">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="truck-list">
+            <h2>Trucks in Motion</h2>
+            <ul>
+                <li class="truck" data-id="truck1">
+                    Truck 1
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">ABC123</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">John Doe</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City XYZ</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City ABC</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck2">
+                    Truck 2
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">DEF456</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Jane Smith</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City LMN</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City DEF</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck3">
+                    Truck 3
+                    <div class="truck-details">
+                        <div class="truck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">DE2525</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Rahul</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City ISN</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City PSF</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="truck" data-id="truck4">
+                    Truck 4
+                    <div class="truck-details">
+                        <div class="tmake_responseruck-info">
+                            <span class="label">License Plate:</span>
+                            <span class="value">AE2525</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Driver Name:</span>
+                            <span class="value">Rshul</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Destination:</span>
+                            <span class="value">City ISP</span>
+                        </div>
+                        <div class="truck-info">
+                            <span class="label">Start Point:</span>
+                            <span class="value">City IOS</span>
+                        </div>
+                    </div>
+                </li>
+                <!-- Add more trucks as needed -->
+            </ul>
+        </div>
+        <div class="details">
+            <div class="detail-row">
+                <span class="label">Truck Name:</span>
+                <span class="value" id="truck">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Current Latitude:</span>
+                <span class="value" id="current-lat">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Current Longitude:</span>
+                <span class="value" id="current-lng">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Start Location:</span>
+                <span class="value" id="start-location">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">End Location:</span>
+                <span class="value" id="end-location">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Temperature:</span>
+                <span class="value" id="temperature">-</span>
+            </div>
+            <div class="detail-row">
+                <span class="label"> AC Temperature:</span>
+                <span class="value" id="temperature-ac">-</span>
+            </div>
+            <div class="button-row">
+                <button id="air-conditioner-btn">Air Conditioner On/Off</button>
+                <button id="adjust-temperature-btn">Adjust Temperature</button>
+                <button id="alert-message-btn">Driver Alert Message</button>
+            </div>
+        </div>
+        <div id="alert-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close-btn">&times;</span>
+                <h3>Driver Alert Message</h3>
+                <textarea id="alert-message" rows="4" placeholder="Enter your message..."></textarea>
+                <button id="send-alert-btn">Send</button>
+            </div>
+        </div>
+        <div id="temperature-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close-btn">&times;</span>
+                <h3>Adjust Temperature</h3>
+                <p>Current Temperature: <span id="current-temperature">-</span> °C</p>
+                <input type="range" id="temperature-slider" min="-10" max="20" step="1">
+            </div>
+        </div>
+        <div id="ac-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close-btn">&times;</span>
+                <h3>Air Conditioner</h3>
+                <button id="turn-on-ac-btn">Turn On</button>
+                <button id="turn-off-ac-btn">Turn Off</button>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    
+    <script src="/static/live-script.js"></script> 
+</body>
+</html>
